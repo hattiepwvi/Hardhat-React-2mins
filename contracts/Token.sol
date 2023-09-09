@@ -3,10 +3,6 @@ pragma solidity ^0.8.18;
 
 import "hardhat/console.sol";
 
-/**
- *  1.2 debug
- *     1) console.log("占位符%s", 占位符的内容);
- */
 
 contract Token {
     string public name = "My Hardhat Token";
