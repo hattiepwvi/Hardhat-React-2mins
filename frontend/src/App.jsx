@@ -1,5 +1,6 @@
 import getBlockchain from "./ethereum.jsx";
 import { useEffect, useState } from "react";
+import Token from "./Token.jsx";
 
 function App() {
   const [token, setToken] = useState(undefined);
@@ -13,34 +14,10 @@ function App() {
   }, []);
 
   if (typeof token === "undefined") {
-    return (
-      <section className="flex justify-center items-center h-screen">
-        <div className="main">
-          <div className="gradient"></div>
-        </div>
-        <main className="app">
-          <div className="w-full h-full flex justify-center items-center">
-            <h1 className="head_text blue_gradient text-center">LOADING...</h1>
-          </div>
-        </main>
-      </section>
-    );
+    return <Token text="LOADING..." color="blue_gradient" />;
   }
 
-  return (
-    <section className="flex justify-center items-center h-screen">
-      <div className="main">
-        <div className="gradient"></div>
-      </div>
-      <main className="app">
-        <div className="w-full h-full flex justify-center items-center">
-          <h1 className="head_text orange_gradient text-center">
-            WELCOME TO YOUR TOKEN
-          </h1>
-        </div>
-      </main>
-    </section>
-  );
+  return <Token text="WELCOME TO YOUR TOKEN" color="orange_gradient" />;
 }
 
 export default App;
